@@ -1,28 +1,33 @@
 package com.issueflow.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Issue {
-	private String id;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	private String title;
 	private String description;
 	private String priority;
 	private String status;
 	
-	public Issue() {	}
+	public Issue() {}
 	
-	public Issue(String id, String title, String description, String priority, String status) {
-		this.id = id;
+	public Issue(String title, String description, String priority, String status) {
 		this.title = title;
 		this.description = description;
 		this.priority = priority;
 		this.status = status;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getTitle() {

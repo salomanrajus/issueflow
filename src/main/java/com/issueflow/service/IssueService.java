@@ -12,8 +12,7 @@ import com.issueflow.repository.IssueRepository;
 public class IssueService {
 	
 	private final IssueRepository issueRepository;
-	private int issueCounter = 0;
-	
+
 	public IssueService(IssueRepository issueRepository) {
 		this.issueRepository = issueRepository;
 	}
@@ -23,11 +22,7 @@ public class IssueService {
 	}
 	
 	public Issue createIssue(CreateIssueRequest request) {
-		issueCounter++;
-		String issueId = "ISS-" + String.format("%03d", issueCounter);
-
 		Issue issue =  new Issue(
-		        issueId,
 		        request.getTitle(),
 		        request.getDescription(),
 		        request.getPriority(),
