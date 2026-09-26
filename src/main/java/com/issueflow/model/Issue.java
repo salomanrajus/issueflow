@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Entity
 public class Issue {
@@ -16,13 +18,16 @@ public class Issue {
     private String description;
     private String type;
     private String priority;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private IssueStatus status;
+
     private String environment;
 
     public Issue() {
     }
 
-    public Issue(String title, String description, String type, String priority, String status, String environment) {
+    public Issue(String title, String description, String type, String priority, IssueStatus status, String environment) {
         this.title = title;
         this.description = description;
         this.type = type;
@@ -59,11 +64,11 @@ public class Issue {
         this.priority = priority;
     }
 
-    public String getStatus() {
+    public IssueStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(IssueStatus status) {
         this.status = status;
     }
 
