@@ -1,3 +1,13 @@
 spring:
   application:
     name: issueflow
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/issueflow
+    username: postgres
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
