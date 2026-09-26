@@ -1,12 +1,10 @@
 package com.issueflow.dto;
 
-import com.issueflow.model.IssueStatus;
-
 public class CreateIssueRequest {
     private String title;
     private String description;
     private String priority;
-    private IssueStatus status;
+    private String status;
     private String type;
     private String environment;
 
@@ -37,11 +35,11 @@ public class CreateIssueRequest {
         this.priority = priority;
     }
 
-    public IssueStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(IssueStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
