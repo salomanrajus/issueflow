@@ -23,11 +23,13 @@ public class IssueService {
 	
 	public Issue createIssue(CreateIssueRequest request) {
 		Issue issue =  new Issue(
-		        request.getTitle(),
-		        request.getDescription(),
-		        request.getPriority(),
-		        request.getStatus()
-		    );
+				request.getTitle(),
+				request.getDescription(),
+				request.getType(),
+				request.getPriority(),
+				request.getStatus(),
+				request.getEnvironment()
+		);
 		
 		issueRepository.save(issue);
 		return issue;

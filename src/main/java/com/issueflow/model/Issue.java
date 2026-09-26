@@ -8,59 +8,79 @@ import jakarta.persistence.Id;
 @Entity
 public class Issue {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String title;
-	private String description;
-	private String priority;
-	private String status;
-	
-	public Issue() {}
-	
-	public Issue(String title, String description, String priority, String status) {
-		this.title = title;
-		this.description = description;
-		this.priority = priority;
-		this.status = status;
-	}
+    private String title;
+    private String description;
+    private String type;
+    private String priority;
+    private String status;
+    private String environment;
 
-	public Long getId() {
-		return id;
-	}
+    public Issue() {
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public Issue(String title, String description, String type, String priority, String status, String environment) {
+        this.title = title;
+        this.description = description;
+        this.type = type;
+        this.priority = priority;
+        this.status = status;
+        this.environment = environment;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getPriority() {
-		return priority;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setPriority(String priority) {
-		this.priority = priority;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public String getPriority() {
+        return priority;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-		
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
 }
 
